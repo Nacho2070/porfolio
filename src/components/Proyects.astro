@@ -1,0 +1,137 @@
+---
+import JavaIcon from "../Icons/skillsIcon/JavaIcon.astro";
+import MysqlIcon from "../Icons/skillsIcon/MysqlIcon.astro";
+import SpringBootIcon from "../Icons/skillsIcon/SpringBootIcon.astro";
+import AngularIcon from "../Icons/AngularIcon.astro";
+import AstroIcon from "../Icons/AstroIcon.astro"; 
+import Tailwind from "../Icons/Tailwind.astro";
+import JwtIcon from "../Icons/JwtIcon.astro";
+import CodeButton from "../components/CodeButton.astro";
+import GitHubIcon from "../Icons/GitHub-Icon.astro";
+import ProyectsHeroIcon from "../Icons/ProyectsHeroIcon.astro";
+import JsIcon from "../Icons/JsIcon.astro";
+
+const TAGS = {
+  Java: {
+    name: "Java",
+    class: "bg-black text-white",
+    icon: JavaIcon,
+  },
+  SpringBoot: {
+    name: "Spring boot",
+    class: "bg-[#003159] text-white",
+    icon: SpringBootIcon,
+  },
+  MySQL: {
+    name: "My SQL",
+    class: "bg-[#003159] text-white",
+    icon: MysqlIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-[#003159] text-white",
+    icon: JwtIcon,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: AstroIcon,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#003159] text-white",
+    icon: AngularIcon,
+  },
+  JS:{
+    name: "Javascript",
+    class: "bg-[#003159] text-white",
+    icon: JsIcon,
+  }
+
+}
+const PROJECTS = [
+  {
+    title: "Reservación de películas",
+    description: "API Rest en Java utilizando Spring Boot, con registro e inicio de sesión con distintos roles como admin, user y developer.El sistema cuenta con funcionalidades para la reserva de películas, permitiendo a los usuarios reservar funciones y obtener tickets con asientos y detalles de funciones reservadas.Implementa tests unitarios con Mockito y JUnit una base de datos SQL",
+    github: "https://github.com/Nacho2070/MovieReservation",
+    image: "src/images/MovieRerservationImg.PNG",
+    tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL,TAGS.JWT],
+  },  
+  {
+    title: "Microservices",
+    description: "Gestión de productos (CRUD) con arquitectura de microservicios, cuenta con un apiGateway, comunicación con WebClient, sistema de mensajeria simple con kafka, EurekaServer y base de datos SQL",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/Nacho2070/MicroServices",
+    image: "src/images/MicroServiciosImg.PNG",
+    tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL],
+  },
+  {
+    title: "Pomodoro",
+    description: "Pomodoro es un método para mejorar la gestión del tiempo dedicado a una actividad. Utilicé Angular junto con la librería Angular Material.",
+    link: "https://github.com/Nacho2070/Pomodoro",
+    github: "https://github.com/Nacho2070/Pomodoro", 
+    image: "src/images/Pomodoro-Captura.PNG",
+    tags: [TAGS.ANGULAR, TAGS.MySQL],
+  },
+  {
+    title: "Porfolio",
+    description: "Porfolio personal utilizando Astro y un poco de javascript",    
+    github: "https://github.com/Nacho2070/Porfolio",
+    image: "src/images/Porfolio.PNG",
+    tags: [TAGS.ASTRO,TAGS.TAILWIND,TAGS.JS],
+  }
+];
+
+---
+<h3 class="flex items-center text-3xl mt-2 font-semibold gap-x-3 text-black/80 dark:text-white undefined">
+  <ProyectsHeroIcon />
+  Proyectos personales<h3>
+<section id="projects" class="flex flex-col justify-center items-center max-w lg:gap-y-14 px-4 my-10">                
+
+  
+            {
+                PROJECTS.map(({ image, title, description, tags, link, github }) => (
+                
+                
+                <article class="group flex flex-col mt-3 lg:flex-row space-x-0 h-full lg:mt-5 bg-whiteshadow-sm rounded-xl dark:shadow-neutral-700/70">
+                    
+                    <div class="w-full md:w-1/2">
+                        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                          <img alt={title} loading="lazy" width="45" height="45" decoding="async" data-nimg="1" class=" object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 "                      
+                          src={image}>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full  p-4 mt-2 lg:mt-0 md:w-1/2 md:max-w-lg">
+                          <h1 class="text-xl font-semibold  dark:text-neutral-100 dark:hover:text-white">{title}</h1>                                
+                          <p class="mt-5 w-full flex-none leading-6 dark:text-slate-400">{description}</p>
+                          <ul class="flex flex-row my-5 gap-x-2">
+                              {tags.map((tag)=> (
+                                  <li>
+                                      <span class="flex gap-x-2 text-[9.5px] rounded-full border-[0.5px] border-gray-800 lg:text-xs text-white py-1 px-2">
+                                      <tag.icon class="size-4" />
+                                        {tag.name}
+                                      </span>                        
+                                  </li>    
+                                  ))
+                              }
+                          </ul>                             
+                          <div class="w-full flex flex-row-reverse">
+                              <CodeButton href={github}>
+                                <GitHubIcon class="size-4" />
+                                Code
+                              </CodeButton>
+                        </div>   
+                        
+                               
+                </div>
+            </article>      
+                
+            ))
+            }                                                                                                                                                                                                                 
+  </section>

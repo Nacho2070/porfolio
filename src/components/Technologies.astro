@@ -1,0 +1,102 @@
+---
+import Tecnologies from "../components/Tecnologies.astro";
+import SpringBootIcon from "../Icons/skillsIcon/SpringBootIcon.astro";
+import SkillsIcon from "../Icons/SkillsIcon.astro";
+import HtmlIcon from "../Icons/skillsIcon/HtmlIcon.astro";
+import JsIcon from "../Icons/JsIcon.astro";
+import JavaIcon from "../Icons/skillsIcon/JavaIcon.astro";
+import MysqlIcon from "../Icons/skillsIcon/MysqlIcon.astro";
+import ReactIcon from "../Icons/skillsIcon/ReactIcon.astro";
+import CIcon from "../Icons/CIcon.astro";
+import MongoIcon from "../Icons/skillsIcon/MongoDbIcon.astro";
+import BookHero from "../Icons/BooOpenHero.astro";
+import NestJsIcon from "../Icons/skillsIcon/NestJsIcon.astro";
+import GitIcon from "../Icons/skillsIcon/GitIcon.astro";
+const ICONS_SKILLS = [
+    {
+    Icon: JavaIcon,
+    IconName: "Java"
+    },
+    {
+    Icon: SpringBootIcon,
+    IconName: "Spring Boot"
+    },
+    {
+    Icon: HtmlIcon,
+    IconName: "HTML"
+    },
+    {
+    Icon: JsIcon,
+    IconName: "JavaScript"
+    },    
+    {
+    Icon: MysqlIcon,
+    IconName: "MySQL"
+  },
+  {
+    Icon: GitIcon,
+    IconName: "Git"
+  }
+
+]
+
+
+const ICONS_LEARN = [
+    {
+    Icon: ReactIcon,
+    IconName: "React"
+    },
+    {
+    Icon: CIcon,
+    IconName: "C#"
+    },
+    {
+    Icon: MongoIcon,
+    IconName: "MongoDB"
+    },
+    {
+    Icon: NestJsIcon,
+    IconName: "NestJs"
+    }
+]
+
+---
+
+<section id="skills" class="pb-0">
+    <h2
+        class="flex items-center text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+    >
+        <SkillsIcon />
+        Habilidades
+    </h2>
+    <div
+        class="grid grid-cols-3 mt-11 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
+    >
+    {ICONS_SKILLS.map(({ Icon, IconName }) => (
+        <Tecnologies>
+            <Icon class="w-20 h-20 mb-3" />
+            <p class="text-[15px] text-xl pt-2 font-semibold">{IconName}</p>
+        </Tecnologies>
+    ))}
+    </div>
+</section>
+
+<section id="skills" class="pb-0 mt-5">
+    <h2
+        class="flex items-center w-auto mt-5 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+    >
+        <BookHero />
+       Estoy interesado en aprender
+    </h2>
+    <div
+        class="grid grid-cols-3 mt-11 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
+    >
+    {ICONS_LEARN.map(({ Icon, IconName }) => (
+    <Tecnologies>
+        <Icon class="w-20 h-20 mb-3" />
+        <p class="text-[15px] text-xl pt-2 font-semibold">{IconName}</p>
+    </Tecnologies>
+))}
+    </div>
+</section>
+
