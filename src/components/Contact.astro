@@ -62,7 +62,7 @@ function js_onSuccess(): void {
 
 function js_onError(error: string): void {
     // Evitar la redirección
-    window.location.href = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+    console.log(error);
 }
 
 const sendButton = document.getElementById("js_send") as HTMLInputElement | null;
@@ -78,7 +78,7 @@ function js_send(): boolean {
         if (request.readyState === 4 && request.status === 200) {            
             js_onSuccess();
         } else if (request.readyState === 4) {
-            js_onError(request.response);
+            js_onError("Ocurrio un error");
         }
     };
 

@@ -59,30 +59,28 @@ const PROJECTS = [
     title: "Reservación de películas",
     description: "API Rest en Java utilizando Spring Boot, con registro e inicio de sesión con distintos roles como admin, user y developer.El sistema cuenta con funcionalidades para la reserva de películas, permitiendo a los usuarios reservar funciones y obtener tickets con asientos y detalles de funciones reservadas.Implementa tests unitarios con Mockito y JUnit una base de datos SQL",
     github: "https://github.com/Nacho2070/MovieReservation",
-    image: "src/images/MovieRerservationImg.PNG",
+    image: "public/projects/MovieRerservationImg.PNG",
     tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL,TAGS.JWT],
   },  
   {
     title: "Microservices",
-    description: "Gestión de productos (CRUD) con arquitectura de microservicios, cuenta con un apiGateway, comunicación con WebClient, sistema de mensajeria simple con kafka, EurekaServer y base de datos SQL",
-    link: "https://svgl.vercel.app/",
+    description: "Gestión de productos (CRUD) con arquitectura de microservicios, cuenta con un apiGateway, comunicación con WebClient, sistema de mensajeria simple con kafka, EurekaServer y base de datos SQL",    
     github: "https://github.com/Nacho2070/MicroServices",
-    image: "src/images/MicroServiciosImg.PNG",
+    image: "public/projects/MicroServiciosImg.PNG",
     tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL],
   },
   {
     title: "Pomodoro",
     description: "Pomodoro es un método para mejorar la gestión del tiempo dedicado a una actividad. Utilicé Angular junto con la librería Angular Material.",
-    link: "https://github.com/Nacho2070/Pomodoro",
     github: "https://github.com/Nacho2070/Pomodoro", 
-    image: "src/images/Pomodoro-Captura.PNG",
+    image: "public/projects/Pomodoro-Captura.PNG",
     tags: [TAGS.ANGULAR, TAGS.MySQL],
   },
   {
     title: "Porfolio",
     description: "Porfolio personal utilizando Astro y un poco de javascript",    
     github: "https://github.com/Nacho2070/Porfolio",
-    image: "src/images/Porfolio.PNG",
+    image: "public/projects/Porfolio.PNG",
     tags: [TAGS.ASTRO,TAGS.TAILWIND,TAGS.JS],
   }
 ];
@@ -95,7 +93,7 @@ const PROJECTS = [
 
   
             {
-                PROJECTS.map(({ image, title, description, tags, link, github }) => (
+                PROJECTS.map(({ image, title, description, tags, github }) => (
                 
                 
                 <article class="group flex flex-col mt-3 lg:flex-row space-x-0 h-full lg:mt-5 bg-whiteshadow-sm rounded-xl dark:shadow-neutral-700/70">
