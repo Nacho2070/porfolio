@@ -8,27 +8,27 @@ import Proyects from '../components/Proyects.astro';
 import Technologies from '../components/Technologies.astro';
 ---
 
-<Layout>	
-			<div class="flex flex-col lg:flex-row items-center justify-center my-5 w-full lg:my-4">
-				
-				<div class="items-center w-auto mt-28 mb-[53px] lg:sticky lg:top-0 lg:flex lg:flex-row lg:max-h-screen lg:w-1/2 lg:justify-between lg:py-24">
-					<div class="w-[80%] lg:w-[70%]">						
+<Layout>
+			<section class="flex flex-col md:items-center max-w-full mx-auto items-center justify-center lg:flex-row md:justify-center my-5 lg:my-44">				
+				<div class="items-center  mt-16 mb-[53px] lg:sticky lg:top-0 lg:flex lg:flex-row lg:max-h-screen lg:w-1/2 lg:justify-between ">
+					<div class="w-[80%]  lg:w-[100%] p-1">
 						<h1 class="font-bold tracking-tight text-slate-200 text-5xl">
-								Buenas!, mi nombre es <b id="typing" class="text-cyan-700"></b>
+								Buenas!, soy
+								<b id="typing" class="text-cyan-700"> </b>
 						</h1>
 						<h2 class="mt-3 font-medium tracking-tight text-gray-400  text-2xl">
 							Desarrollador BackEnd
 						</h2>
 						<p class="mt-4 w-full leading-normal text-xl font-medium">
-							Estudiante de tecnicatura en programación en la ciudad de <b class="text-cyan-800">Mendoza, Argentina.</b> <br>
+							Estudiante de tecnicatura en programación en la ciudad de <b class="text-cyan-800/50">Mendoza, Argentina.</b> <br>
 							<b class="text-cyan-700">
-								Me encuentro en busqueda de desafios para seguir aprendiendo!
+								En busqueda de desafios para seguir aprendiendo!
 							</b>
 							
 						</p>
-					</div>			
+					</div>
 				</div>
-					<ul class="mx-0.5 lg:m-3 p-3">
+					<ul class="mx-0.5 md:mx-0 lg:m-3 p-3">
 						<nav class="flex gap-x-2" >
 						  <SocialPills href="https://www.linkedin.com/in/ignacio-ariza/"> 
 							  <LinkedInIcon class="w-6 h-6"  />
@@ -40,7 +40,8 @@ import Technologies from '../components/Technologies.astro';
 						  </SocialPills>  
 						</nav>
 				  	</ul>
-			</div>
+			</section>
+			
 			<Proyects />
 			<Technologies />
 
@@ -68,7 +69,4 @@ import Technologies from '../components/Technologies.astro';
         }
         setTimeout(type, 300);
       }());
-	  setTimeout(() => {
-      	type();
-      }, 1500);
   </script>

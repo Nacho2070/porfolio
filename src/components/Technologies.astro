@@ -1,5 +1,5 @@
 ---
-import Tecnologies from "../components/Tecnologies.astro";
+import Tecnologies from "../components/Container.astro";
 import SpringBootIcon from "../Icons/skillsIcon/SpringBootIcon.astro";
 import SkillsIcon from "../Icons/SkillsIcon.astro";
 import HtmlIcon from "../Icons/skillsIcon/HtmlIcon.astro";
@@ -12,6 +12,7 @@ import MongoIcon from "../Icons/skillsIcon/MongoDbIcon.astro";
 import BookHero from "../Icons/BooOpenHero.astro";
 import NestJsIcon from "../Icons/skillsIcon/NestJsIcon.astro";
 import GitIcon from "../Icons/skillsIcon/GitIcon.astro";
+import DockerImage from "../Icons/skillsIcon/DockerImage.astro";
 const ICONS_SKILLS = [
     {
     Icon: JavaIcon,
@@ -36,6 +37,10 @@ const ICONS_SKILLS = [
   {
     Icon: GitIcon,
     IconName: "Git"
+  },
+  {
+    Icon: DockerImage,
+    IconName: "Docker"
   }
 
 ]
@@ -62,15 +67,15 @@ const ICONS_LEARN = [
 
 ---
 
-<section id="skills" class="pb-0">
+<section id="skills" class="pb-0 mb-12">
     <h2
-        class="flex items-center text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+        class="flex items-center text-3xl mb-16 font-semibold gap-x-3 text-white undefined"
     >
         <SkillsIcon />
         Habilidades
     </h2>
     <div
-        class="grid grid-cols-3 mt-11 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
+        class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
     >
     {ICONS_SKILLS.map(({ Icon, IconName }) => (
         <Tecnologies>
@@ -81,15 +86,15 @@ const ICONS_LEARN = [
     </div>
 </section>
 
-<section id="skills" class="pb-0 mt-5">
+<section id="skills" class="pb-0 mb-12 ">
     <h2
-        class="flex items-center w-auto mt-5 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined"
+        class="flex items-center text-3xl mb-16 font-semibold gap-x-3 text-white undefined"
     >
         <BookHero />
        Estoy interesado en aprender
     </h2>
     <div
-        class="grid grid-cols-3 mt-11 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
+        class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center"
     >
     {ICONS_LEARN.map(({ Icon, IconName }) => (
     <Tecnologies>
