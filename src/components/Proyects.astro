@@ -11,6 +11,7 @@ import GitHubIcon from "../Icons/GitHub-Icon.astro";
 import ProyectsHeroIcon from "../Icons/ProyectsHeroIcon.astro";
 import JsIcon from "../Icons/JsIcon.astro";
 import DockerImage from "../Icons/skillsIcon/DockerImage.astro";
+import KafkaIcon from "../Icons/kafkaIcon.astro";
 const TAGS = {
   Java: {
     name: "Java",
@@ -56,31 +57,29 @@ const TAGS = {
     name: "Docker",
     class: "bg-[#003159] text-white",
     icon: DockerImage,
+  },
+  KAFKA:{
+    name: "ApacheKafka",
+    class: "bg-[#003159] text-white",
+    icon: KafkaIcon
   }
 
 }
 const PROJECTS = [
   {
     title: "API de Gestión de Reservas de Películas con Control de Acceso por Roles",
-    description: "Desarrollé una API REST con registro e inicio de sesión con distintos roles, cada rol tiene acceso a ciertos endpoints. El sistema incluye un CRUD y la funcionalidad de reserva de películas, permitiendo a los usuarios reservar funciones y obtener tickets con asientos reservados, detalles de funciones reservadas y consultar los asientos disponibles. Implementa tests unitarios con Mockito y JUnit base de datos SQL",
+    description: "Desarrollé una API REST desplegada en Render utilizando Docker, que incluye registro e inicio de sesión con control de acceso basado en roles. El sistema incluye un CRUD y la funcionalidad de reserva de películas, permitiendo a los usuarios reservar funciones y obtener tickets con asientos reservados, detalles de funciones reservadas y consultar los asientos disponibles. Implementa tests unitarios con Mockito y JUnit, y base de datos SQL",
     github: "https://github.com/Nacho2070/MovieReservation",
     image: "images/MovieRerservation.png",
+    link: "https://movie-reservation-combined-v1.onrender.com/swagger-ui/index.html#",
     tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL,TAGS.JWT],
   },  
   {
-    title: "Sistema de Gestión de Productos con Arquitectura de Microservicios",
-    description: "Me ayudó a comprender conceptos claves de la arquitectura. Incluye un apiGateway, comunicación con WebClient, sistema de mensajeria simple con kafka, EurekaServer y base de datos SQL",
-    github: "https://github.com/Nacho2070/MicroServices",
+    title: "Social Media App",
+    description: 'Desarrollé una aplicación que permite a los usuarios registrarse, publicar posts, dar "like", comentar y recibir notificaciones asincrónicas por correo electrónico. La aplicación fue diseñada con una arquitectura basada en microservicios. Además, implementé un sistema de mensajería asincrónica utilizando Apache Kafka para gestionar la notificación de eventos. Para el entorno de desarrollo, utilicé Docker en la creación de bases de datos y en la configuración de imágenes de Apache Kafka y Keycloak.',
+    github: "https://github.com/Nacho2070/SocialMedia",
     image: "images/MicroServicios.png",
-    tags: [TAGS.Java, TAGS.SpringBoot, TAGS.MySQL, TAGS.DOCKER],
-  },
-  {
-    title: "Pomodoro",
-    description: "Pomodoro es un método para mejorar la gestión del tiempo dedicado a una actividad. Utilicé Angular junto con la librería Angular Material.",
-    github: "https://github.com/Nacho2070/Pomodoro", 
-    image: "images/Pomodoro.png",
-    tags: [TAGS.ANGULAR],
-    link: "https://pomodoro-shin.onrender.com/"
+    tags: [TAGS.Java, TAGS.SpringBoot, TAGS.KAFKA, TAGS.DOCKER],
   },
   {
     title: "Porfolio",
@@ -131,7 +130,7 @@ const PROJECTS = [
                         </CodeButton>
                         <CodeButton href={link}>
                           <ProyectsHeroIcon class="size-4" />
-                          Preview
+                          SwaggerDoc
                         </CodeButton>            
                       ) : (
                         <CodeButton href={github}>
